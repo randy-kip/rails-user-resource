@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Cryptocurrencies</h1>
+
+<div id="cryptocurrencies">
+  <% @cryptocurrencies.each do |cryptocurrency| %>
+    <%= render cryptocurrency %>
+    <p>
+      <%= link_to "Show this cryptocurrency", cryptocurrency %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New cryptocurrency", new_cryptocurrency_path %>

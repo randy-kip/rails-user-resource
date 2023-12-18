@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cryptocurrency %>
+
+<div>
+  <%= link_to "Edit this cryptocurrency", edit_cryptocurrency_path(@cryptocurrency) %> |
+  <%= link_to "Back to cryptocurrencies", cryptocurrencies_path %>
+
+  <%= button_to "Destroy this cryptocurrency", @cryptocurrency, method: :delete %>
+</div>
