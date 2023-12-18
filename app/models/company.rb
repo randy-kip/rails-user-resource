@@ -1,13 +1,20 @@
 class Company < ApplicationRecord
+    RISK_FACTORS = [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+    ]
+
     has_many :stock_prices, dependent: :destroy
 
     validates :name, presence: true, uniqueness: true
     validates :ticker_symbol, presence: true, uniqueness: true
+    validates :risk_factor, presence: true, inclusion: { in: RISK_FACTORS }
 
     validate :validate_length_of_ticker_symbol
 
     private 
-    
+
     def validate_length_of_ticker_symbol
         if self.ticker_symbol.present?
             if self.ticker_symbol.size < 2 or self.ticker_symbol.size > 4

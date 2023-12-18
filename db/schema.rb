@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_18_150113) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_18_154945) do
   create_table "companies", force: :cascade do |t|
-    t.string "name"
-    t.string "ticker_symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name", null: false
+    t.string "ticker_symbol", null: false
+    t.string "risk_factor", null: false
   end
 
   create_table "stock_prices", force: :cascade do |t|
