@@ -9,4 +9,13 @@
     <%= cryptocurrency.started_at %>
   </p>
 
+  <hr>
+  <ul>
+    <% @cryptocurrency.crypto_prices.each do |o| %>
+      <li>
+        <%= o.price %> (<%= o.captured_at %>%)
+      </li>
+    <% end %>
+  </ul>
+
 </div>
