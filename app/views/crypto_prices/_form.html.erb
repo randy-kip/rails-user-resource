@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :Cryptocurrency_id, style: "display: block" %>
-    <%= form.text_field :Cryptocurrency_id %>
+    <%= form.collection_select :Cryptocurrency_id, Cryptocurrency.all, :id, :name %>
   </div>
 
   <div>
